@@ -1,0 +1,21 @@
+{% extends 'layout.twig' %}
+
+{% block body %}
+    <div class="uk-container">
+        <h1 class="uk-text-center">T'attends quoi là pour mettre ta recherche?</h1>
+        <h2 class="uk-text-center">En haut à droite c'est marqué...Ca évitera d'avoir un GROS UNdefined en dessous</h2>
+        {% for movie in movies %}
+
+            <a href="/{{movie.id}}">
+                <h3>{{movie.title}}</h3>
+            </a>
+            <p> {{movie.overview}} </p>
+            <hr class="uk-divider-icon">
+        {% else %}
+            <h3>Aucun film n'a été trouvé</h3>
+        {% endfor %}
+
+    </div>
+
+
+{% endblock %}
